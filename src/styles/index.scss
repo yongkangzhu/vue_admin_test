@@ -62,4 +62,8 @@ div:focus {
 // main-container global css
 .app-container {
   padding: 20px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  transition: .2s;
+  box-shadow: 0 0 8px 0 rgb(232 237 250 / 60%), 0 2px 4px 0 rgb(232 237 250 / 50%);
 }

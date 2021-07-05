@@ -91,6 +91,19 @@ export const constantRoutes = [
   },
 
   {
+    path: '/cmdsetting',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'cmdSetting',
+        component: () => import('@/views/cmdSetting/index'),
+        meta: { title: 'cmdSetting', icon: 'form' }
+      }
+    ]
+  },
+
+  {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
