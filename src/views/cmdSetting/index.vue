@@ -145,7 +145,9 @@
 </template>
 
 <script>
-import { getList } from '@/api/cmd'
+import { getList } from '@/api/cmd';
+
+import request  from '@/utils/request';
 
 export default {
   data() {
@@ -407,7 +409,11 @@ export default {
     // });
 
     this.$refs.plantTable.setCurrentRow(this.tableData1[0]);
-
+    request({
+      url: 'http://localhost:5000/user',
+      method: 'get'
+    }).then(res=>console.log(res))
+    .catch(err=>console.log(err))
   }
 };
 </script>
