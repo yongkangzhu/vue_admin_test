@@ -1,10 +1,12 @@
 
 const tokens = {
   admin: {
-    token: 'admin-token'
+    token: 'admin-token',
+    password:'apiadmin'
   },
   editor: {
-    token: 'editor-token'
+    token: 'editor-token',
+    password:'editor'
   }
 }
 
@@ -29,14 +31,21 @@ module.exports = [
     url: '/vue-admin-template/user/login',
     type: 'post',
     response: config => {
-      const { username } = config.body
+      const { username,password } = config.body
       const token = tokens[username]
-
+      console.log(token);
       // mock error
-      if (!token) {
+      if (!token) {      
         return {
           code: 60204,
-          message: 'Account and password are incorrect.'
+          message: 'Account is incorrect.'
+        }
+      }
+
+      if(password != token.password){
+        return {
+          code: 60205,
+          message: 'password is incorrect.'
         }
       }
 

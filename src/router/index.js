@@ -56,6 +56,7 @@ export const constantRoutes = [
   },
 
   {
+    hidden: true,
     path: '/example',
     component: Layout,
     redirect: '/example/table',
@@ -78,6 +79,7 @@ export const constantRoutes = [
   },
 
   {
+    hidden: true,
     path: '/form',
     component: Layout,
     children: [
@@ -98,12 +100,13 @@ export const constantRoutes = [
         path: 'index',
         name: 'cmdSetting',
         component: () => import('@/views/cmdSetting/index'),
-        meta: { title: 'cmdSetting', icon: 'form' }
+        meta: { title: 'cmdSetting', icon: 'el-icon-setting' }
       }
     ]
   },
 
   {
+    hidden: true,
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
@@ -163,6 +166,7 @@ export const constantRoutes = [
   },
 
   {
+    hidden: true,
     path: 'external-link',
     component: Layout,
     children: [
@@ -178,7 +182,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  //mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
